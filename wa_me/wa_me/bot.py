@@ -45,9 +45,9 @@ class Bot(Client):
                 self.after_event_status(ctx)
             self.after_event(ctx)
         except Exception as e:
-            self.on_exception(ctx, e)
+            self.on_exception(e)
 
-    def on_exception(self, ctx: Ctx, e: Exception) -> None:
+    def on_exception(self, e: Exception) -> None:
         """The default error handler provided by the handler."""
         traceback.print_exception(type(e), e, e.__traceback__, file=sys.stderr)
 
