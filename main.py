@@ -53,7 +53,7 @@ async def verify_token(
 async def echo_bot(request: Request):
     data = await request.json()
     print(data)
-    msg = data.get('entry')[0]  # .get('changes').get('value').get('messages')[0].get('text').get('body')
+    msg = data.get('entry')[0].get('changes')[0].get('value').get('messages')[0].get('text').get('body')
     print(msg)
     # bot.handle(data)
     return str(msg)
